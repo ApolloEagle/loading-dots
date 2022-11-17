@@ -1,0 +1,25 @@
+{
+  "name": "@apolloeagle/loading-dots",
+  "version": "1.0.0",
+  "description": "A component for displaying loading dots in React Native applications.",
+  "repository": "https://github.com/ApolloEagle/loading-dots",
+  "author": "Blake Reimer",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "keywords": [
+    "loading",
+    "dots",
+    "react",
+    "react-native",
+    "npm"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-native": "^0.70.6",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.70.6"
+  }
+}
