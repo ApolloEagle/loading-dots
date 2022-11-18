@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
-import { DotProps } from "./types";
 import { Animated } from "react-native";
 import { LoadingDotContext } from "../loading-dots/loading-dots";
 
+interface DotProps {
+  size: Animated.Value;
+}
+
 const Dot = ({ size }: DotProps): JSX.Element => {
-  const loadingDotContext = useContext(LoadingDotContext);
+  const { color, spacing } = useContext(LoadingDotContext);
   return (
     <Animated.View
       style={{
-        backgroundColor: loadingDotContext?.color,
+        backgroundColor: color,
         height: size,
         width: size,
         borderRadius: 9999,
-        margin: loadingDotContext?.spacing,
+        margin: spacing,
       }}
     />
   );

@@ -1,20 +1,17 @@
 import React, { useContext, useState } from "react";
 import { Animated } from "react-native";
 import { LoadingDotContext } from "../loading-dots/loading-dots";
-import { Dot } from "../dot";
+import Dot from "../dot/dot";
 
 const Container = (): JSX.Element => {
-  const loadingDotContext = useContext(LoadingDotContext);
-  const list = Array.from(
-    Array(loadingDotContext?.dots),
-    () => new Animated.Value(0)
-  );
+  const { dots, size } = useContext(LoadingDotContext);
+  const list = Array.from(Array(dots), () => new Animated.Value(0));
   const [visible, setVisible] = useState(false);
 
   const pulse = (node: Animated.Value, delay: number) => {
     const sequence = Animated.sequence([
       Animated.timing(node, {
-        toValue: Number(loadingDotContext?.size),
+        toValue: Number(size),
         delay,
         duration: 400,
         useNativeDriver: false,

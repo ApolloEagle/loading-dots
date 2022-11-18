@@ -6,6 +6,7 @@
      </h1>
   </p>
   <img alt="npm" src="https://img.shields.io/npm/v/@apolloeagle/loading-dots">
+  <img alt="npm" src="https://img.shields.io/npm/dt/@apolloeagle/loading-dots">
   <img alt="GitHub" src="https://img.shields.io/github/license/ApolloEagle/loading-dots">
 </div>
 <br />
