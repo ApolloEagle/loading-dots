@@ -1,1 +1,3 @@
-export * from "./loading-dots";
+import { LoadingDots } from "./loading-dots";
+
+export { LoadingDots };

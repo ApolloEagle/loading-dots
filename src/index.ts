@@ -1,1 +1,3 @@
-export * from "./components";
+import { LoadingDots } from "./components";
+
+export default LoadingDots;
