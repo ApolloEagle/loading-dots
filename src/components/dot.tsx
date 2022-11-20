@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Animated } from "react-native";
-import { LoadingDotContext } from "../context";
-import { DotProps } from "../types";
+import { useLoadingContext } from "./context";
 
-const Dot = ({ size }: DotProps): JSX.Element => {
-  const { color, spacing } = useContext(LoadingDotContext);
+const Dot = ({ size }: { size: Animated.Value }): JSX.Element => {
+  const { color, spacing } = useLoadingContext();
   return (
     <Animated.View
       style={{

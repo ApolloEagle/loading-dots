@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Animated } from "react-native";
-import { LoadingDotContext } from "../context";
+import { useLoadingContext } from "./context";
 import { Dot } from "./dot";
 import { animationStyle } from "./animation-style";
 
 const Container = (): JSX.Element => {
-  const { dots, size, style } = useContext(LoadingDotContext);
+  const { dots, style, size } = useLoadingContext();
   const list = Array.from(Array(dots), () => new Animated.Value(0));
   const [visible, setVisible] = useState(false);
 
