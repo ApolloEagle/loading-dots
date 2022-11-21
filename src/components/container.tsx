@@ -5,13 +5,13 @@ import { Dot } from "./dot";
 import { animationStyle } from "./animation-style";
 
 const Container = (): JSX.Element => {
-  const { dots, style, size } = useLoadingContext();
+  const { dots, size } = useLoadingContext();
   const list = Array.from(Array(dots), () => new Animated.Value(0));
   const [visible, setVisible] = useState(false);
 
   const animation = (nodes: Animated.Value[]) => {
     Animated.parallel(
-      nodes.map((node, index) => animationStyle(style, node, index * 260, size))
+      nodes.map((node, index) => animationStyle(node, index * 260, size))
     ).start(() => {
       setVisible(!visible);
     });

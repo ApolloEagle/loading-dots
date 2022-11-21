@@ -1,15 +1,7 @@
-import React, { createContext, ReactNode, useContext } from "react";
-
-type LoadingDotsProps = {
-  style?: string;
-  dots?: number;
-  color?: string;
-  size?: number;
-  spacing?: number;
-};
+import React, { createContext, ReactNode, useContext, useState } from "react";
+import { LoadingDotsProps } from "../types";
 
 const defaultState = {
-  style: "pulse",
   dots: 3,
   color: "black",
   size: 10,
@@ -22,10 +14,18 @@ const useLoadingContext = () => {
   return context;
 };
 
-const LoadingDotContextProvider = ({ children }: { children: ReactNode }) => (
-  <LoadingDotContext.Provider value={{ ...defaultState }}>
-    {children}
-  </LoadingDotContext.Provider>
-);
+const LoadingDotContextProvider = ({
+  children,
+  values,
+}: {
+  children: ReactNode;
+  values: LoadingDotsProps;
+}) => {
+  return (
+    <LoadingDotContext.Provider value={{ ...values }}>
+      {children}
+    </LoadingDotContext.Provider>
+  );
+};
 
 export { LoadingDotContextProvider, useLoadingContext };

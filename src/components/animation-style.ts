@@ -2,7 +2,6 @@ import React from "react";
 import { Animated } from "react-native";
 
 export const animationStyle = (
-  style: string | undefined,
   node: Animated.Value,
   delay: number,
   size: number | undefined
