@@ -1,19 +1,24 @@
 import React from "react";
-import { Animated } from "react-native";
+import { Animated, View } from "react-native";
 import { useLoadingContext } from "./context";
+import { styles } from "./animation-style";
 
-const Dot = ({ size }: { size: Animated.Value }): JSX.Element => {
-  const { color, spacing } = useLoadingContext();
+const Dot = ({ dynamicSize }: { dynamicSize: Animated.Value }): JSX.Element => {
+  const { style, color, size, spacing } = useLoadingContext();
   return (
-    <Animated.View
+    <View
       style={{
-        backgroundColor: color,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
         height: size,
         width: size,
-        borderRadius: 9999,
         margin: spacing,
       }}
-    />
+    >
+      <Animated.View style={styles(style, color, size, dynamicSize)} />
+    </View>
   );
 };
 

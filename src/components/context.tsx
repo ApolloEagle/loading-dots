@@ -2,6 +2,7 @@ import React, { createContext, ReactNode, useContext, useState } from "react";
 import { LoadingDotsProps } from "../types";
 
 const defaultState = {
+  style: "pulse",
   dots: 3,
   color: "black",
   size: 10,

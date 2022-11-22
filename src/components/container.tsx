@@ -5,13 +5,31 @@ import { Dot } from "./dot";
 import { animationStyle } from "./animation-style";
 
 const Container = (): JSX.Element => {
-  const { dots, size } = useLoadingContext();
-  const list = Array.from(Array(dots), () => new Animated.Value(0));
+  const { style, dots, size, color } = useLoadingContext();
+
+  const animatedValues = (style: string | undefined) => {
+    switch (style) {
+      case "pulse":
+        return Number(0);
+      case "elastic":
+        return Number(1);
+      case "flashing":
+        return Number(size);
+      case "typing":
+        return Number(0);
+      default:
+        return Number(0);
+    }
+  };
+  const list = Array.from(
+    Array(dots),
+    () => new Animated.Value(animatedValues(style))
+  );
   const [visible, setVisible] = useState(false);
 
   const animation = (nodes: Animated.Value[]) => {
     Animated.parallel(
-      nodes.map((node, index) => animationStyle(node, index * 260, size))
+      nodes.map((node, index) => animationStyle(style, node, index * 260, size))
     ).start(() => {
       setVisible(!visible);
     });
@@ -29,7 +47,7 @@ const Container = (): JSX.Element => {
       }}
     >
       {list.map((size, index) => (
-        <Dot key={index} size={size} />
+        <Dot key={index} dynamicSize={size} />
       ))}
     </Animated.View>
   );

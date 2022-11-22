@@ -12,10 +12,11 @@
 <br />
 
 <div align="center">
-  <img src="https://github.com/ApolloEagle/loading-dots/blob/main/loading-dots.gif" />
+  <img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/loading-dots.gif" />
   <br />
   <br />
   <p>A component to display loading dots for React Native applications.</p>
+  <p>Stylings inspired by <a href="https://github.com/nzbin/three-dots" target="_blank">@nzbin/three-dots</a></p>
 </div>
 
 ## Installation
@@ -34,10 +35,10 @@ import LoadingDots from "@apolloeagle/loading-dots"; // <---- Import package
 const Page = () => {
   return (
     <View style={styles.container}>
-        <LoadingDots /> {/* <---- Add component */}
+      <LoadingDots /> {/* <---- Add component */}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -50,11 +51,12 @@ const styles = StyleSheet.create({
 ```
 
 ## Styling Options
-A list of available props to pass into the ```<LoadingProps />``` component:
+
+A list of available props to pass into the `<LoadingProps />` component:
 
 | Props   | Type   | Default | Description              |
 | ------- | ------ | ------- | ------------------------ |
 | dots    | Number | 3       | Number of dots displayed |
 | color   | String | 'black' | Color of dots            |
-| size    | Number |  10     | Size of dots             |
-| spacing | Number |  2      | Space between dots       |
+| size    | Number | 10      | Size of dots             |
+| spacing | Number | 2       | Space between dots       |
