@@ -18,12 +18,14 @@
       <th>Elastic</th>
       <th>Flashing</th>
       <th>Typing</th>
+      <th>Ping</th>
     </tr>
     <tr>
       <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/pulse.gif" height="50px" /></td>
       <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/elastic.gif" height="50px" /></td>
       <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/flashing.gif" height="50px" /></td>
       <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/typing.gif" height="50px" /></td>
+      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/ping.gif" height="50px" /></td>
     </tr>
   </table>
   <p>A component to display loading dots for React Native applications.</p>
@@ -66,10 +68,10 @@ const styles = StyleSheet.create({
 
 A list of available props to pass into the `<LoadingProps />` component:
 
-| Props   | Type   | Default | Description                                                                 |
-| ------- | ------ | ------- | --------------------------------------------------------------------------- |
-| style   | String | 'pulse' | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing` |
-| dots    | Number | 3       | Number of dots displayed                                                    |
-| color   | String | 'black' | Color of dots                                                               |
-| size    | Number | 10      | Size of dots                                                                |
-| spacing | Number | 2       | Space between dots                                                          |
+| Props   | Type   | Default | Description                                                                         |
+| ------- | ------ | ------- | ----------------------------------------------------------------------------------- |
+| style   | String | 'pulse' | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing`, `ping` |
+| dots    | Number | 3       | Number of dots displayed                                                            |
+| color   | String | 'black' | Color of dots                                                                       |
+| size    | Number | 10      | Size of dots                                                                        |
+| spacing | Number | 2       | Space between dots                                                                  |
