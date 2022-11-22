@@ -27,6 +27,7 @@
     </tr>
   </table>
   <p>A component to display loading dots for React Native applications.</p>
+  <p>Example implementation: <a href="https://codesandbox.io/s/interesting-dewdney-xkez8v">CodeSandbox.io</a></p>
   <p>Stylings inspired by <a href="https://github.com/nzbin/three-dots" target="_blank">@nzbin/three-dots</a></p>
 </div>
 
