@@ -1,6 +1,5 @@
 import React from "react";
 import { Animated } from "react-native";
-import { useLoadingContext } from "./context";
 
 export const animationStyle = (
   style: string | undefined,
@@ -69,6 +68,15 @@ export const animationStyle = (
     }),
   ]);
 
+  const ping = Animated.sequence([
+    Animated.timing(node, {
+      toValue: 0,
+      delay,
+      duration: 1200,
+      useNativeDriver: false,
+    }),
+  ]);
+
   switch (style) {
     case "pulse":
       return pulse;
@@ -78,6 +86,8 @@ export const animationStyle = (
       return flashing;
     case "typing":
       return typing;
+    case "ping":
+      return ping;
     default:
       return pulse;
   }
@@ -121,6 +131,22 @@ export const styles = (
     width: size,
     borderRadius: 9999,
   };
+  const ping = {
+    position: "absolute",
+    opacity: dynamicSize,
+    transform: [
+      {
+        scale: dynamicSize?.interpolate({
+          inputRange: [0, 1],
+          outputRange: [1, 0],
+        }),
+      },
+    ],
+    backgroundColor: color,
+    height: size,
+    width: size,
+    borderRadius: 9999,
+  };
 
   switch (style) {
     case "pulse":
@@ -131,6 +157,8 @@ export const styles = (
       return flashing;
     case "typing":
       return typing;
+    case "ping":
+      return ping;
     default:
       return pulse;
   }

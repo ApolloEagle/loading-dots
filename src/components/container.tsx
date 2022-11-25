@@ -5,7 +5,7 @@ import { Dot } from "./dot";
 import { animationStyle } from "./animation-style";
 
 const Container = (): JSX.Element => {
-  const { style, dots, size, color } = useLoadingContext();
+  const { style, dots, size } = useLoadingContext();
 
   const animatedValues = (style: string | undefined) => {
     switch (style) {
@@ -17,12 +17,14 @@ const Container = (): JSX.Element => {
         return Number(size);
       case "typing":
         return Number(0);
+      case "ping":
+        return Number(1);
       default:
         return Number(0);
     }
   };
   const list = Array.from(
-    Array(dots),
+    Array(style === "ping" ? 1 : dots),
     () => new Animated.Value(animatedValues(style))
   );
   const [visible, setVisible] = useState(false);
