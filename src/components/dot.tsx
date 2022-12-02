@@ -1,25 +1,19 @@
-import React from "react";
-import { Animated, View } from "react-native";
-import { useLoadingContext } from "./context";
-import { styles } from "./animation-style";
+import { Animated } from "react-native";
+import { DotProps } from "../types";
+import { animationStyles } from "./animation-styles";
 
-const Dot = ({ dynamicSize }: { dynamicSize: Animated.Value }): JSX.Element => {
-  const { animation, color, size, spacing } = useLoadingContext();
-  return (
-    <View
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        height: size,
-        width: size,
-        margin: spacing,
-      }}
-    >
-      <Animated.View style={styles(animation, color, size, dynamicSize)} />
-    </View>
-  );
-};
+const Dot = ({
+  color,
+  size,
+  spacing,
+  animationValue,
+  animationType,
+}: DotProps) => (
+  <Animated.View
+    style={
+      animationStyles(animationValue, animationType, color, size, spacing).dot
+    }
+  />
+);
 
-export { Dot };
+export default Dot;
