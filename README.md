@@ -12,25 +12,10 @@
 <br />
 
 <div align="center">
-  <table>
-    <tr>
-      <th>Pulse</th>
-      <th>Elastic</th>
-      <th>Flashing</th>
-      <th>Typing</th>
-      <th>Ping</th>
-    </tr>
-    <tr>
-      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/pulse.gif" height="50px" /></td>
-      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/elastic.gif" height="50px" /></td>
-      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/flashing.gif" height="50px" /></td>
-      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/typing.gif" height="50px" /></td>
-      <td valign="top"><img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/ping.gif" height="50px" /></td>
-    </tr>
-  </table>
+  <img src="https://github.com/ApolloEagle/loading-dots/blob/main/src/assets/dots.gif" height="100px" />
   <p>A component to display loading dots for React Native applications.</p>
-  <p>Example implementation: <a href="https://codesandbox.io/s/interesting-dewdney-xkez8v">CodeSandbox.io</a></p>
-  <p>Stylings inspired by <a href="https://github.com/nzbin/three-dots" target="_blank">@nzbin/three-dots</a></p>
+  <p>Examples: <a href="https://codesandbox.io/s/interesting-dewdney-xkez8v">CodeSandbox.io</a></p>
+  <p>Animations inspired by <a href="https://github.com/nzbin/three-dots" target="_blank">@nzbin/three-dots</a></p>
 </div>
 
 ## Installation
@@ -68,10 +53,11 @@ const styles = StyleSheet.create({
 
 A list of available props to pass into the `<LoadingProps />` component:
 
-| Props   | Type   | Default | Description                                                                         |
-| ------- | ------ | ------- | ----------------------------------------------------------------------------------- |
-| style   | String | 'pulse' | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing`, `ping` |
-| dots    | Number | 3       | Number of dots displayed                                                            |
-| color   | String | 'black' | Color of dots                                                                       |
-| size    | Number | 10      | Size of dots                                                                        |
-| spacing | Number | 2       | Space between dots                                                                  |
+| Props     | Type   | Default | Units | Description                                                                         |
+| --------- | ------ | ------- | ----- | ----------------------------------------------------------------------------------- |
+| animation | String | 'pulse' | n/a   | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing`, `ping` |
+| dots      | Number | 3       | n/a   | Number of dots displayed                                                            |
+| color     | String | 'black' | n/a   | Color of dots                                                                       |
+| size      | Number | 10      | px    | Size of dots                                                                        |
+| spacing   | Number | 2       | px    | Space between dots                                                                  |
+| delay     | Number | 260     | ms    | Time between dot rendering                                                          |
