@@ -1,7 +1,8 @@
 export type LoadingDotsProps = {
-  style?: string;
+  animation?: string;
   dots?: number;
   color?: string;
   size?: number;
   spacing?: number;
+  delay?: number;
 };

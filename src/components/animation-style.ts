@@ -2,7 +2,7 @@ import React from "react";
 import { Animated } from "react-native";
 
 export const animationStyle = (
-  style: string | undefined,
+  animation: string | undefined,
   node: Animated.Value,
   delay: number,
   size: number | undefined
@@ -77,7 +77,7 @@ export const animationStyle = (
     }),
   ]);
 
-  switch (style) {
+  switch (animation) {
     case "pulse":
       return pulse;
     case "elastic":
@@ -94,7 +94,7 @@ export const animationStyle = (
 };
 
 export const styles = (
-  style: string | undefined,
+  animation: string | undefined,
   color: string | undefined,
   size: number | undefined,
   dynamicSize: Animated.Value | undefined
@@ -148,7 +148,7 @@ export const styles = (
     borderRadius: 9999,
   };
 
-  switch (style) {
+  switch (animation) {
     case "pulse":
       return pulse;
     case "elastic":

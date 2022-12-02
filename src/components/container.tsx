@@ -5,10 +5,10 @@ import { Dot } from "./dot";
 import { animationStyle } from "./animation-style";
 
 const Container = (): JSX.Element => {
-  const { style, dots, size } = useLoadingContext();
+  const { animation, dots, size, delay } = useLoadingContext();
 
-  const animatedValues = (style: string | undefined) => {
-    switch (style) {
+  const animatedValues = (animation: string | undefined) => {
+    switch (animation) {
       case "pulse":
         return Number(0);
       case "elastic":
@@ -24,20 +24,27 @@ const Container = (): JSX.Element => {
     }
   };
   const list = Array.from(
-    Array(style === "ping" ? 1 : dots),
-    () => new Animated.Value(animatedValues(style))
+    Array(dots),
+    () => new Animated.Value(animatedValues(animation))
   );
   const [visible, setVisible] = useState(false);
 
-  const animation = (nodes: Animated.Value[]) => {
+  const run = (nodes: Animated.Value[]) => {
     Animated.parallel(
-      nodes.map((node, index) => animationStyle(style, node, index * 260, size))
+      nodes.map((node, index) =>
+        animationStyle(
+          animation,
+          node,
+          delay ? index * delay : index * 260,
+          size
+        )
+      )
     ).start(() => {
       setVisible(!visible);
     });
   };
 
-  animation(list);
+  run(list);
 
   return (
     <Animated.View

@@ -4,7 +4,7 @@ import { useLoadingContext } from "./context";
 import { styles } from "./animation-style";
 
 const Dot = ({ dynamicSize }: { dynamicSize: Animated.Value }): JSX.Element => {
-  const { style, color, size, spacing } = useLoadingContext();
+  const { animation, color, size, spacing } = useLoadingContext();
   return (
     <View
       style={{
@@ -17,7 +17,7 @@ const Dot = ({ dynamicSize }: { dynamicSize: Animated.Value }): JSX.Element => {
         margin: spacing,
       }}
     >
-      <Animated.View style={styles(style, color, size, dynamicSize)} />
+      <Animated.View style={styles(animation, color, size, dynamicSize)} />
     </View>
   );
 };
