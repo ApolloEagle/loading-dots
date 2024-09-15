@@ -53,11 +53,12 @@ const styles = StyleSheet.create({
 
 A list of available props to pass into the `<LoadingProps />` component:
 
-| Props     | Type   | Default | Units | Description                                                                         |
-| --------- | ------ | ------- | ----- | ----------------------------------------------------------------------------------- |
-| animation | String | 'pulse' | n/a   | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing`, `ping` |
-| dots      | Number | 3       | n/a   | Number of dots displayed                                                            |
-| color     | String | 'black' | n/a   | Color of dots                                                                       |
-| size      | Number | 10      | px    | Size of dots                                                                        |
-| spacing   | Number | 2       | px    | Space between dots                                                                  |
-| delay     | Number | 260     | ms    | Time between dot rendering                                                          |
+| Props     | Type   | Default | Units | Description                                                                                   |
+| --------- | ------ | ----------------- | ----- | ----------------------------------------------------------------------------------- |
+| animation | String | 'elastic'         | n/a   | Animation style. Available styles: `pulse`, `elastic`, `flashing`, `typing`, `ping` |
+| dotNumber | Number | 3                 | n/a   | Number of dots displayed                                                            |
+| color     | String | rgb(25,203,229)   | n/a   | Color of dots                                                                       |
+| size      | Number | 20                | px    | Size of dots                                                                        |
+| spacing   | Number | 7                 | px    | Space between dots                                                                  |
+| delay     | Number | 250               | ms    | Time between dot rendering                                                          |
+| duration  | Number | 400               | ms    | Time of animation                                                                   |
